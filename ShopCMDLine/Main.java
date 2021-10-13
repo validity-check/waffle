@@ -35,23 +35,7 @@ public class Main {
             System.out.println("1 - Print all shop products, their costs and stocks.");
             System.out.println("2 - Select a product by name");
             System.out.println("3 - Exit");
-            int choice = 0;
-            boolean valid = false;
-            while (!valid) {
-                try {
-                    choice = sc.nextInt();
-                    if (1 <= choice && choice >= 3) {
-                        valid = true;
-                        sc.next();
-                    } else {
-                        System.out.println("Please make sure you put an integer between one and three.");
-                        sc.next();
-                    }
-                } catch (InputMismatchException exception) {
-                    System.out.println("Please make sure you put an integer between one and three.");
-                    sc.next();
-                }
-            }
+            int choice = receiveInput(sc);
             if (choice == 3) {
                 System.out.println("|--------------------------------|");
                 System.out.println("Goodbye!");
@@ -59,7 +43,22 @@ public class Main {
                 System.exit(0);
                 sc.close();
             }
-            sc.close();
         }
+    }
+
+    public static int receiveInput(Scanner sc) {
+        int choice = 0;
+        try {
+            choice = sc.nextInt();
+        } catch (InputMismatchException exception) {
+            System.out.println("Please input a valid integer between 1 and 3.");
+            sc.next();
+            receiveInput(sc);
+        }
+        if (!(1 <= choice && 3 >= choice)) {
+            System.out.println("Please input a valid integer between 1 and 3.");
+            receiveInput(sc);
+        }
+        return choice;
     }
 }
