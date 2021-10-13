@@ -1,6 +1,7 @@
 package ShopCMDLine;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Main
@@ -15,9 +16,10 @@ public class Main {
     }
 
     public static void createShop(ArrayList<ShopItem> shop) {
-        shop.add(new ShopItem("Hat", 3, 94));
-        shop.add(new ShopItem("Bag", 12, 20));
-        shop.add(new ShopItem("Jacket", 30, 77));
-        shop.add(new ShopItem("Kew Gardens 50p Brilliant Uncirculated Coin", 1, 125));
+        Random random = new Random();
+        shop.add(new ShopItem("Hat", random.nextInt(8), random.nextInt(500)));
+        shop.add(new ShopItem("Bag", random.nextInt(30), random.nextInt(90)));
+        shop.add(new ShopItem("Jacket", random.nextInt(15), random.nextInt(20)));
+        shop.add(new ShopItem("Kew Gardens 50p Brilliant Uncirculated Coin", random.nextInt(150), 1));
     }
 }
