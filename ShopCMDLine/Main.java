@@ -1,7 +1,5 @@
 package ShopCMDLine;
 
-import java.io.*;
-
 /**
  * Main
  */
