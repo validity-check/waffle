@@ -74,4 +74,17 @@ public class Main {
             System.out.println("STOCK: " + shop.get(i).getStock());
         }
     }
+
+    public static void selectProduct(ArrayList<ShopItem> shop) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("----------------------------------");
+        System.out.println("Please enter the name of the product you want to select:\n> ");
+        String selection = sc.next();
+        String closestName;
+        int mostSimilar;
+        for (int i = 0; i < shop.size(); i++) {
+
+        }
+        sc.close();
+    }
 }
