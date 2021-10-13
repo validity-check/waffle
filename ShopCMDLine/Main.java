@@ -36,6 +36,9 @@ public class Main {
             System.out.println("2 - Select a product by name");
             System.out.println("3 - Exit");
             int choice = receiveInput(sc);
+            if (choice == 1) {
+                printShop(shop);
+            }
             if (choice == 3) {
                 System.out.println("|--------------------------------|");
                 System.out.println("Goodbye!");
@@ -60,5 +63,15 @@ public class Main {
             receiveInput(sc);
         }
         return choice;
+    }
+
+    public static void printShop(ArrayList<ShopItem> shop) {
+        for (int i = 0; i < shop.size(); i++) {
+            System.out.println("----------------------------------");
+            System.out.println("ITEM " + i);
+            System.out.println("NAME: " + shop.get(i).getName());
+            System.out.println("PRICE: £" + shop.get(i).getPrice());
+            System.out.println("STOCK: " + shop.get(i).getStock());
+        }
     }
 }
