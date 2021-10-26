@@ -16,20 +16,20 @@ def multiply(firstnum, lastnum):
 def divide(firstnum, lastnum):
     print(firstnum / lastnum)
 print("Totally cool and awesome calculator!!!11!!")
-numOne = input("Enter first number: ")
+numOne = int(input("Enter first number: "))
 while numOneLoop == False:
     if isinstance(numOne, int) == False:
         print("Invalid input!")
     else:
         break
 while numTwoLoop == False:
-    numTwo = input("Enter second number: ")
+    numTwo = int(input("Enter second number: "))
     if isinstance(numTwo, int) == False:
         print("Invalid input")
     else:
         break
 while operationLoop == False:
-    operation = input("What do you want to do? Operations supported: +, -, *, /")
+    operation = input("What do you want to do? Operations supported: +, -, *, /: ")
     if operation == "+":
         add(numOne, numTwo)
         break
