@@ -16,8 +16,8 @@ def multiply(firstnum, lastnum):
 def divide(firstnum, lastnum):
     print(firstnum / lastnum)
 print("Totally cool and awesome calculator!!!11!!")
-numOne = int(input("Enter first number: "))
 while numOneLoop == False:
+    numOne = int(input("Enter first number: "))
     if isinstance(numOne, int) == False:
         print("Invalid input!")
     else:
