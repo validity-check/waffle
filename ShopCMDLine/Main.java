@@ -81,7 +81,7 @@ public class Main {
                 closestName = i;
             }
         }
-        System.out.println("Did you mean " + shop.get(closestName).getName() + "?" + mostSimilar + " " + closestName);
+        System.out.println("Did you mean " + shop.get(closestName).getName() + "?");
         System.out.println("Y to confirm, N for no");
         String confirmation = "";
         boolean yn = true;
