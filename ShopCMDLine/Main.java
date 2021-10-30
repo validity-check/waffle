@@ -23,7 +23,7 @@ public class Main {
         shop.add(new ShopItem("Hat", random.nextInt(8), random.nextInt(500)));
         shop.add(new ShopItem("Bag", random.nextInt(30), random.nextInt(90)));
         shop.add(new ShopItem("Jacket", random.nextInt(15), random.nextInt(20)));
-        shop.add(new ShopItem("Kew Gardens 50p Brilliant Uncirculated Coin", random.nextInt(150), 1));
+        shop.add(new ShopItem("Kew Gardens 50p Brilliant Uncirculated Coin", random.nextInt(500), 1));
     }
 
     public static void shopLoop(ArrayList<ShopItem> shop) {
