@@ -127,6 +127,12 @@ public class Main {
                     shop.get(closestName).stockDown(qty);
 
                 }
+                if (choice == 2) {
+                    System.out.println("How much stock would you like to add?");
+                    int qty = sc.nextInt();
+                    shop.get(closestName).stockUp(qty);
+                    System.out.println("The stock is now " + shop.get(closestName).getStock());
+                }
             case "n":
                 yn = false;
             }
