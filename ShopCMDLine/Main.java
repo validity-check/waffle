@@ -52,22 +52,6 @@ public class Main {
         }
     }
 
-    public static int receiveInput(Scanner sc, int low, int high) {
-        int choice = 0;
-        try {
-            choice = sc.nextInt();
-        } catch (InputMismatchException exception) {
-            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
-            sc.next();
-            receiveInput(sc, low, high);
-        }
-        if (!(1 <= choice && 3 >= choice)) {
-            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
-            receiveInput(sc, low, high);
-        }
-        return choice;
-    }
-
     public static void printShop(ArrayList<ShopItem> shop) {
         for (int i = 0; i < shop.size(); i++) {
             System.out.println("----------------------------------");
@@ -163,5 +147,21 @@ public class Main {
                 costs[s2.length()] = lastValue;
         }
         return costs[s2.length()];
+    }
+
+    public static int receiveInput(Scanner sc, int low, int high) {
+        int choice = 0;
+        try {
+            choice = sc.nextInt();
+        } catch (InputMismatchException exception) {
+            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
+            sc.next();
+            receiveInput(sc, low, high);
+        }
+        if (!(1 <= choice && 3 >= choice)) {
+            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
+            receiveInput(sc, low, high);
+        }
+        return choice;
     }
 }
