@@ -158,7 +158,7 @@ public class Main {
             sc.next();
             receiveInput(sc, low, high);
         }
-        if (!(1 <= choice && 3 >= choice)) {
+        if (!(low <= choice && high >= choice)) {
             System.out.println("Please input a valid integer between " + low + " and " + high + ".");
             receiveInput(sc, low, high);
         }
