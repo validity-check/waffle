@@ -109,7 +109,6 @@ public class Main {
                     System.out.println("How many do you want?");
                     int qty = receiveInput(sc, 0, shop.get(closestName).getStock());
                     shop.get(closestName).stockDown(qty);
-
                 }
                 if (choice == 2) {
                     System.out.println("How much stock would you like to add?");
