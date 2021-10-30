@@ -35,7 +35,7 @@ public class Main {
             System.out.println("1 - Print all shop products, their costs and stocks.");
             System.out.println("2 - Select a product by name");
             System.out.println("3 - Exit");
-            int choice = receiveInput(sc);
+            int choice = receiveInput(sc, 1, 3);
             if (choice == 1) {
                 printShop(shop);
             }
@@ -52,18 +52,18 @@ public class Main {
         }
     }
 
-    public static int receiveInput(Scanner sc) {
+    public static int receiveInput(Scanner sc, int low, int high) {
         int choice = 0;
         try {
             choice = sc.nextInt();
         } catch (InputMismatchException exception) {
-            System.out.println("Please input a valid integer between 1 and 3.");
+            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
             sc.next();
-            receiveInput(sc);
+            receiveInput(sc, low, high);
         }
         if (!(1 <= choice && 3 >= choice)) {
-            System.out.println("Please input a valid integer between 1 and 3.");
-            receiveInput(sc);
+            System.out.println("Please input a valid integer between " + low + " and " + high + ".");
+            receiveInput(sc, low, high);
         }
         return choice;
     }
@@ -91,29 +91,33 @@ public class Main {
                 closestName = i;
             }
         }
-        if (0 <= closestName & closestName >= 3) {
-            System.out.println("Did you mean " + shop.get(closestName).getName() + "?");
+        System.out.println("Did you mean " + shop.get(closestName).getName() + "?");
+        System.out.println("Y to confirm, N for no");
+        String confirmation = "";
+        // while (confirmation != "y" && confirmation != "n") {
+        confirmation = sc.next().toLowerCase();
+        if (confirmation != "y" && confirmation != "n") {
+            System.out.println("Sorry, that input was not recognised");
             System.out.println("Y to confirm, N for no");
-            String confirmation = "";
-            while (confirmation != "y" & confirmation != "n") {
-                confirmation = sc.next();
-                if (confirmation != "y" && confirmation != "n") {
-                    System.out.println("Sorry, that input was not recognised");
-                    System.out.println("Y to confirm, N for no");
-                }
-            }
-            if (confirmation == "y") {
-                System.out.println("Product details:");
-                System.out.println("----------------------------------");
-                System.out.println("ITEM " + closestName);
-                System.out.println("NAME: " + shop.get(closestName).getName());
-                System.out.println("PRICE: £" + shop.get(closestName).getPrice());
-                System.out.println("STOCK: " + shop.get(closestName).getStock());
-                System.out.println("----------------------------------");
-                System.out.println("What would you like to do with this product?");
-                System.out.println("1 - Buy product.");
-                System.out.println("2 - Stock up on product.");
-                System.out.println("3 - Go back");
+        }
+        // }
+        if (confirmation == "y") {
+            System.out.println("Product details:");
+            System.out.println("----------------------------------");
+            System.out.println("ITEM " + closestName);
+            System.out.println("NAME: " + shop.get(closestName).getName());
+            System.out.println("PRICE: £" + shop.get(closestName).getPrice());
+            System.out.println("STOCK: " + shop.get(closestName).getStock());
+            System.out.println("----------------------------------");
+            System.out.println("What would you like to do with this product?");
+            System.out.println("1 - Buy product.");
+            System.out.println("2 - Stock up on product.");
+            System.out.println("3 - Go back");
+            int choice = receiveInput(sc, 1, 3);
+            if (choice == 1) {
+                System.out.println("How many do you want?");
+                int qty = receiveInput(sc, 1, shop.get(closestName).getStock());
+                shop.get(closestName).stockDown(qty);
             }
         }
     }
