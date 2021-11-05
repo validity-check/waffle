@@ -6,4 +6,8 @@
     <RootNamespace>C_</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Sharprompt" Version="2.3.6" />
+  </ItemGroup>
+
 </Project>

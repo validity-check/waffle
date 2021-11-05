@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "G/BeThZZvk/XhfUU+/OJIFx4bqtDprZGv6wIOD8IzQDFe8MaFXqWjjn1qYBoBaJuelT5Xp0vCu77JYFrKfCZvw==",
+  "dgSpecHash": "SwYdYxXGzQuqdvokyRhMMRU9eq3M5VtUmQvv1J8frlR/LaR5I7OBbUODtFciZt2RM6Ne4mDg6Rjb9FyJ+jl0ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\dars2\\Desktop\\code\\waffle\\Quizzer\\C#\\C#.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dars2\\.nuget\\packages\\sharprompt\\2.3.6\\sharprompt.2.3.6.nupkg.sha512",
+    "C:\\Users\\dars2\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
