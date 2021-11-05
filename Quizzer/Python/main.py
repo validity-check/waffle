@@ -48,28 +48,37 @@ class NumberValidator(Validator):
                                   cursor_position=document.cursor_position)
 
 
-# Display a welcoming message to the user
-message_dialog(title="Welcome to Quizzer", text="Press OK to continue.").run()
+def main():
+    """The main function of the program"""
+    # We want to make sure that the user has entered a number greater than 5
+    # We do this by creating a validator and passing it to the input_dialog
+    # Display a welcoming message to the user
+    message_dialog(title="Welcome to Quizzer",
+                   text="Press OK to continue.").run()
 
-# Ask questions required to start the quiz
-# Firstly, we want to know how difficult the user wants to play and adjust the game accordingly
-difficulty = radiolist_dialog(
-    title="Difficulty",
-    text="Which difficulty would you like to choose?",
-    values=[("Easy", "Easy"), ("Medium", "Medium"), ("Hard", "Hard"),
-            ("Impossible", "Impossible")]).run()
+    # Ask questions required to start the quiz
+    # Firstly, we want to know how difficult the user wants to play and adjust the game accordingly
+    difficulty = radiolist_dialog(
+        title="Difficulty",
+        text="Which difficulty would you like to choose?",
+        values=[("Easy", "Easy"), ("Medium", "Medium"), ("Hard", "Hard"),
+                ("Impossible", "Impossible")]).run()
 
-# Then, we want to know how many questions the user wants to be asked
-# We need to add a validator to make sure that the number is valid and greater then 5
-# We need to make sure that the number is greater than 5 because otherwise a user would be able to go on to impossible mode and answer one question and then see a special 100% message
-question_numbers = input_dialog(
-    title="Number of questions",
-    text="How many questions would you like to be asked",
-    validator=NumberValidator()).run()
+    # Then, we want to know how many questions the user wants to be asked
+    # We need to add a validator to make sure that the number is valid and greater then 5
+    # We need to make sure that the number is greater than 5 because otherwise a user would be able to go on to impossible mode and answer one question and then see a special 100% message
+    question_numbers = input_dialog(
+        title="Number of questions",
+        text="How many questions would you like to be asked",
+        validator=NumberValidator()).run()
 
-# We initialise the question_handler module, giving it the difficulty and the number of questions
-ask_questions = question_handler.question_handler(difficulty,
-                                                  question_numbers[0])
+    # We initialise the question_handler module, giving it the difficulty and the number of questions
+    ask_questions = question_handler.question_handler(difficulty,
+                                                      question_numbers[0])
 
-# We then let the question_handler module do the rest of the work for us by calling this function
-ask_questions.ask_questions()
+    # We then let the question_handler module do the rest of the work for us by calling this function
+    ask_questions.ask_questions()
+
+
+if __name__ == '__main__':
+    main()
