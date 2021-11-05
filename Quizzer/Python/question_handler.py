@@ -4,7 +4,7 @@
 # Quizzer App
 # -------------------------------------
 # Work of @validity-check
-# Github: https://github.com/validity-check/QuizzerPy
+# Github: https://github.com/validity-check/waffle
 
 # Question Handler does logic related to questions to keep main.py clean and not overloaded
 
