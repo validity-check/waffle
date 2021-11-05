@@ -1,4 +1,12 @@
-﻿using System;
+﻿/// The main project file for the Quizzer App
+/// Program.cs
+/// -------------------------------------
+/// Quizzer App
+/// -------------------------------------
+/// Work of @validity-check
+/// Github: https://github.com/validity-check/waffle
+
+using System;
 
 namespace C_
 {
