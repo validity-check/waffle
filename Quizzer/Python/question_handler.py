@@ -1,12 +1,11 @@
-"""The module which handles the asking of questions, keeping main.py clean."""
-# question_handler.py
-# -------------------------------------
-# Quizzer App
-# -------------------------------------
-# Work of @validity-check
-# Github: https://github.com/validity-check/waffle
-
-# Question Handler does logic related to questions to keep main.py clean and not overloaded
+"""The module which handles the asking of questions, keeping main.py clean.
+question_handler.py
+-------------------------------------
+Quizzer App
+-------------------------------------
+Work of @validity-check
+Github: https://github.com/validity-check/waffle
+"""
 
 # Randomises questions' operators and numbers included
 from random import choice, randint

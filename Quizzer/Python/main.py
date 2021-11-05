@@ -1,10 +1,11 @@
-"""The main project file for the Quizzer App"""
-# main.py
-# -------------------------------------
-# Quizzer App
-# -------------------------------------
-# Work of @validity-check
-# Github: https://github.com/validity-check/waffle
+"""The main project file for the Quizzer App
+main.py
+-------------------------------------
+Quizzer App
+-------------------------------------
+Work of @validity-check
+Github: https://github.com/validity-check/waffle
+"""
 
 # This is the library we will use to ask questions.
 # We will use it because it will make the handling of
