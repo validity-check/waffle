@@ -1,5 +1,6 @@
 {
   "name": "csharp",
+  "description": "I don't know what this is, and I don't know what to do with it.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
